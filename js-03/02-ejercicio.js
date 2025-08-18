@@ -26,7 +26,7 @@ document.write(
 );
 
 // posiciones 1, 3 y ultima
-document.write(`<li>Elemento 1er posicion: ${ciudades[0]}</li>`);
+document.write(`<ul><li>Elemento 1er posicion: ${ciudades[0]}</li>`);
 document.write(`<li>Elemento 3er posicion: ${ciudades[2]}</li>`);
 document.write(`<li>Elemento ultima posicion: ${ciudades[ciudades.length - 1]}</li></ul>`);
 
