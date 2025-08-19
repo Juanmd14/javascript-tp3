@@ -7,59 +7,50 @@
 // Sustituye el elemento que ocupa la segunda posición por la ciudad de 'Barcelona'
 
 let ciudades = [];
-let ciudad;
-
-while (true) {
-  ciudad = prompt("Ingresa nombre de ciudades");
-  if (ciudad === null) break;
-
-  ciudad = ciudad.trim();
-  if (ciudad !== "") {
-    ciudades.push(ciudad);
-  }
-}
-
-// longitud
-
-document.write(
-  `<p>El arreglo de ciudades tiene ${ciudades.length} elementos</p>`
+let ciudad = prompt(
+  "Ingrese el nombre de una ciudad (Cancelar para finalizar)"
 );
 
-// posiciones 1, 3 y ultima
-document.write(`<ul><li>Elemento 1er posicion: ${ciudades[0]}</li>`);
-document.write(`<li>Elemento 3er posicion: ${ciudades[2]}</li>`);
-document.write(`<li>Elemento ultima posicion: ${ciudades[ciudades.length - 1]}</li></ul>`);
-
-// añadir paris
-
-ciudades.push('Paris');
-document.write(`Elemento ultima posicion: ${ciudades[ciudades.length - 1]}`);
-
-// elemento en segunda posicion
-
-document.write(`<p>${ciudades[1]} es el segundo elemento</p>`)
-
-// sustituir segundo elemento por Barcelona
-
-    if (ciudades.length >= 2) {
-            ciudades[1] = "Barcelona";
-            document.write(`<p>Ahora ${ciudades[1]} es el segundo elemento</p>`);
-        } else {
-            document.write("<p>No se puede sustituir</p>");
-        }
-
-
-// arreglo de ciudades 
-        document.write("<h1>Arreglo de ciudades</h1>");
-
-document.write("<ul>");
-
-for (let i = 0; i < ciudades.length; i++) {
-    document.write(`<li>Elemento: ${ciudades[i]}</li>`);
+while (ciudad !== null) {
+  ciudades.push(ciudad);
+  ciudad = prompt("Ingrese el nombre de otra ciudad (Cancelar para finalizar)");
 }
 
-document.write("</ul>");
+//Mostrar el arreglo
+console.log(ciudades);
 
+//Longitud del arreglo
+document.writeln(
+  `<p>La cantidad de ciudades ingresadas es: ${ciudades.length}</p>`
+);
 
+//Mostrar ciudades en determinadas posiciones
+document.writeln(
+  `<p>El elemento en la primera posición es: ${ciudades[0]}</p>`
+);
+document.writeln(
+  `<p>El elemento en la tercera posición es: ${ciudades[2]}</p>`
+);
+document.writeln(
+  `<p>El elemento en la última posición es: ${
+    ciudades[ciudades.length - 1]
+  }</p>`
+);
 
+ciudades.map((ciudad) => document.writeln(`<p>Ciudad: ${ciudad}</p>`));
 
+//Añadir Paris como última ciudad
+ciudades.push("Paris");
+
+document.write("<p>Se agrego Paris</p>");
+ciudades.map((ciudad) => document.writeln(`<p>Ciudad: ${ciudad}</p>`));
+
+document.writeln(
+  `<p>El elemento en la segunda posición es: ${ciudades[1]}</p>`
+);
+
+ ciudades[1] = "Barcelona";
+ ciudades.splice(1, 1, "Barcelona");
+
+document.write("<p>Se agrego Barcelona en la segunda posición</p>");
+ciudades.map((ciudad) => document.writeln(`<p>Ciudad: ${ciudad}</p>`));
